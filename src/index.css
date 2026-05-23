@@ -1,1 +1,55 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "2005 Iannnnn";
+  src: url("./asset/font/2005_iannnnnAMD.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Anuphan";
+  src: url("./asset/font/Anuphan-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Archivo";
+  src: url("./asset/font/Archivo-VariableFont_wdth,wght.ttf") format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Archivo";
+  src: url("./asset/font/Archivo-Italic-VariableFont_wdth,wght.ttf") format("truetype");
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("./asset/font/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Pixelify Sans";
+  src: url("./asset/font/PixelifySans-VariableFont_wght.ttf") format("truetype");
+}
+
+@theme {
+  --font-2005: "2005 Iannnnn", sans-serif;
+  --font-anuphan: "Anuphan", sans-serif;
+  --font-archivo: "Archivo", sans-serif;
+  --font-bricolage: "Bricolage Grotesque", sans-serif;
+  --font-pixelify: "Pixelify Sans", sans-serif;
+  --animate-vibrate: vibrate 0.3s infinite;
+  --animate-float: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes vibrate {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-1px) rotate(-0.5deg); }
+  50% { transform: translateY(1px) rotate(0.5deg); }
+  75% { transform: translateY(-1px) rotate(-0.5deg); }
+}

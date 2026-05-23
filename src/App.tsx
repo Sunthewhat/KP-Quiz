@@ -1,8 +1,8 @@
 import "./index.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Homepage } from "./pages/homepage/HomePage";
-import { QuestionPage } from "./pages/question/QuestionPage";
-import { ResultPage } from "./pages/result/ResultPage";
+import { Homepage } from "./page/homepage/HomePage";
+import { QuestionPage } from "./page/question/QuestionPage";
+import { ResultPage } from "./page/result/ResultPage";
 
 export function App() {
 	return (
