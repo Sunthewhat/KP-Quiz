@@ -48,13 +48,6 @@ const QuestionPage: FC = () => {
 	const questionIndex = parseInt(searchParam.get("q") || "1");
 
 	useEffect(() => {
-		backgrounds.forEach((src) => {
-			const img = new Image();
-			img.src = src;
-		});
-	}, []);
-
-	useEffect(() => {
 		const q = searchParam.get("q");
 
 		if (q === null) {
