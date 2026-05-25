@@ -100,7 +100,7 @@ const QuestionPage: FC = () => {
 				style={{ minHeight: "100%", minWidth: "100%" }}
 			/>
 			<div
-				className={`relative z-10 flex flex-col items-center gap-[3vh] px-4 py-[8vh] ${isBottomHalf ? "pt-[24vh]" : ""}`}
+				className={`relative z-10 flex flex-col items-center gap-[5vh] px-4 py-[8vh] ${isBottomHalf ? "pt-[18vh]" : "pt-[11vh]"}`}
 			>
 				{questionIndex === 1 && <img src={globe} alt="" className="h-[15vh] w-auto" />}
 				{questionIndex === 2 && <img src={lamp} alt="" className="h-[15vh] w-auto" />}
@@ -143,7 +143,7 @@ const QuestionPage: FC = () => {
 					{questionIndex === 3 && <img src={ghost} alt="" className="w-[80vw]" />}
 					{questionIndex === 5 && <img src={block} alt="" className="w-[80vw] -mt-5" />}
 					<p
-						className={`text-center font-anuphan font-[480] whitespace-pre-line ${questionIndex === 3 || questionIndex === 5 ? "absolute" : ""} ${questionIndex === 6 ? "mt-10" : ""} ${questionIndex === 9 ? "-mt-5" : ""} ${questionIndex === 11 ? "mt-35" : ""}`}
+						className={`text-center font-anuphan font-[580] whitespace-pre-line ${questionIndex === 3 || questionIndex === 5 ? "absolute" : ""} ${questionIndex === 6 ? "mt-10" : ""} ${questionIndex === 9 ? "-mt-5" : ""} ${questionIndex === 11 ? "mt-35" : ""}`}
 						style={{
 							fontSize: "clamp(1rem, 2.5vh, 1.5rem)",
 							color:
@@ -163,7 +163,7 @@ const QuestionPage: FC = () => {
 					</p>
 				</div>
 				<div
-					className={`flex flex-col gap-[3vh] w-full max-w-sm mx-auto justify-center items-center ${!isBottomHalf ? "mt-[8vh]" : ""} ${questionIndex === 6 ? "mt-10" : ""} ${questionIndex === 8 ? "mt-20" : ""}`}
+					className={`flex flex-col gap-[3vh] w-full max-w-sm mx-auto justify-center items-center ${!isBottomHalf ? "mt-[4vh]" : "mt-[5vh]"} ${questionIndex === 6 ? "mt-10" : ""} ${questionIndex === 8 ? "mt-20" : ""}`}
 				>
 					{question.choices.map((q, i) => (
 						<button
