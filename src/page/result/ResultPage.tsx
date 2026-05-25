@@ -17,34 +17,39 @@ const ResultPage: FC = () => {
 	const result = getResult(resultIndex);
 
 	const handleShare = async () => {
-		const imgSrc = resultImages[resultIndex - 1]!;
-		const response = await fetch(imgSrc);
-		const blob = await response.blob();
-		const file = new File([blob], `result-${resultIndex}.png`, { type: "image/png" });
+		try {
+			const imgSrc = resultImages[resultIndex - 1]!;
+			const response = await fetch(imgSrc);
+			const blob = await response.blob();
+			const file = new File([blob], `result-${resultIndex}.png`, { type: "image/png" });
 
-		if (navigator.share && navigator.canShare({ files: [file] })) {
-			await navigator.share({
-				files: [file],
-			});
-		} else {
-			const link = document.createElement("a");
-			link.href = URL.createObjectURL(blob);
-			link.download = `result-${resultIndex}.png`;
-			link.click();
-			URL.revokeObjectURL(link.href);
+			if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
+				await navigator.share({ files: [file] });
+				return;
+			}
+		} catch {
+			// fall through to download
 		}
+
+		const imgSrc = resultImages[resultIndex - 1]!;
+		const link = document.createElement("a");
+		link.href = imgSrc;
+		link.download = `result-${resultIndex}.png`;
+		document.body.appendChild(link);
+		link.click();
+		document.body.removeChild(link);
 	};
 
 	return (
-		<div className="relative min-h-dvh min-h-screen w-screen flex flex-col justify-center items-center overflow-hidden" style={{ height: "100dvh" }}>
+		<div className="w-screen flex flex-col items-center justify-center bg-black overflow-hidden" style={{ minHeight: "100vh", height: "100dvh" }}>
 			<img
 				src={resultImages[resultIndex - 1]}
 				alt={result.title}
-				className="w-full h-full object-fill"
+				className="w-full max-h-[85vh] object-contain"
 			/>
 			<button
 				onClick={handleShare}
-				className="absolute bottom-10 z-10 bg-white text-black font-anuphan font-[500] text-lg px-8 py-3 rounded-full shadow-lg"
+				className="mt-4 bg-white text-black font-anuphan font-[500] text-lg px-8 py-3 rounded-full shadow-lg"
 			>
 				บันทึกผลลัพธ์
 			</button>
