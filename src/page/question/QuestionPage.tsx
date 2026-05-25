@@ -104,32 +104,34 @@ const QuestionPage: FC = () => {
 			>
 				{questionIndex === 1 && <img src={globe} alt="" className="h-[15vh] w-auto" />}
 				{questionIndex === 2 && <img src={lamp} alt="" className="h-[15vh] w-auto" />}
-				{questionIndex === 4 && <img src={television} alt="" className="h-[15vh] w-auto" />}
-				{(questionIndex === 7 || questionIndex === 12) && (
-					<img src={tuktuk} alt="" className="h-[15vh] w-auto" />
+				{questionIndex === 4 && (
+					<img src={television} alt="" className="h-[15vh] w-auto mb-[-3vh] mt-[4vh]" />
 				)}
-				{questionIndex === 9 && <img src={confetti} alt="" className="h-[10vh] w-auto" />}
+				{(questionIndex === 7 || questionIndex === 12) && (
+					<img src={tuktuk} alt="" className="h-[12vh] w-auto mt-[4vh]" />
+				)}
+				{questionIndex === 9 && <img src={confetti} alt="" className="h-[18vh] w-auto" />}
 				{questionIndex === 10 && (
 					<div className="grid grid-cols-3 grid-rows-3 w-[30vh] h-[15vh] place-items-center">
 						<img
 							src={shirt}
 							alt=""
-							className="h-[6vh] w-auto col-start-2 row-start-1 -mr-10"
+							className="h-[8vh] w-auto col-start-2 row-start-1 -mr-10"
 						/>
 						<img
 							src={book}
 							alt=""
-							className="h-[6vh] w-auto col-start-1 row-start-2 -mt-10 -mr-10"
+							className="h-[8vh] w-auto col-start-1 row-start-2 -mt-10 -mr-10"
 						/>
 						<img
 							src={granny}
 							alt=""
-							className="h-[6vh] w-auto col-start-3 row-start-2 -mb-8"
+							className="h-[8vh] w-auto col-start-3 row-start-2 -mb-8"
 						/>
 						<img
 							src={headphone}
 							alt=""
-							className="h-[6vh] w-auto col-start-2 row-start-3 -ml-3"
+							className="h-[8vh] w-auto col-start-2 row-start-3 -ml-3"
 						/>
 					</div>
 				)}
@@ -143,7 +145,7 @@ const QuestionPage: FC = () => {
 					{questionIndex === 3 && <img src={ghost} alt="" className="w-[80vw]" />}
 					{questionIndex === 5 && <img src={block} alt="" className="w-[80vw] -mt-5" />}
 					<p
-						className={`text-center font-anuphan font-[580] whitespace-pre-line ${questionIndex === 3 || questionIndex === 5 ? "absolute" : ""} ${questionIndex === 6 ? "mt-10" : ""} ${questionIndex === 9 ? "-mt-5" : ""} ${questionIndex === 11 ? "mt-35" : ""}`}
+						className={`text-center font-anuphan font-[580] whitespace-pre-line ${questionIndex === 3 || questionIndex === 5 ? "absolute" : ""} ${questionIndex === 6 ? "mt-[10vh]" : ""} ${questionIndex === 8 ? "mt-[4vh]" : ""} ${questionIndex === 9 ? "-mt-5" : ""} ${questionIndex === 11 ? "mt-[20vh]" : ""}`}
 						style={{
 							fontSize: "clamp(1rem, 2.5vh, 1.5rem)",
 							color:
@@ -163,7 +165,7 @@ const QuestionPage: FC = () => {
 					</p>
 				</div>
 				<div
-					className={`flex flex-col gap-[3vh] w-full max-w-sm mx-auto justify-center items-center ${!isBottomHalf ? "mt-[4vh]" : "mt-[5vh]"} ${questionIndex === 6 ? "mt-10" : ""} ${questionIndex === 8 ? "mt-20" : ""}`}
+					className={`flex flex-col gap-[3vh] w-full max-w-sm mx-auto justify-center items-center ${questionIndex === 9 || questionIndex === 12 ? "mt-0" : questionIndex === 8 ? "mt-[8vh]" : questionIndex === 6 ? "mt-10" : !isBottomHalf ? "mt-[4vh]" : "mt-[5vh]"}`}
 				>
 					{question.choices.map((q, i) => (
 						<button
@@ -186,7 +188,7 @@ const QuestionPage: FC = () => {
 								className="whitespace-pre-line font-anuphan font-[480] text-center flex items-center"
 								style={{
 									fontSize: "clamp(0.75rem, 2vh, 1rem)",
-									padding: "clamp(0.5rem, 1.5vh, 0.75rem) 0.75rem",
+									padding: `clamp(0.5rem, 1.5vh, 0.75rem) ${questionIndex === 8 ? "1.5rem" : "0.75rem"}`,
 									backgroundColor: getChoiceColor(questionIndex),
 									color: getChoiceTextColor(questionIndex),
 								}}
