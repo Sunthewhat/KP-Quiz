@@ -163,7 +163,7 @@ const QuestionPage: FC = () => {
 					</p>
 				</div>
 				<div
-					className={`flex flex-col gap-[2vh] w-full max-w-sm mx-auto justify-center items-center ${questionIndex === 6 ? "mt-10" : ""} ${questionIndex === 8 ? "mt-20" : ""}`}
+					className={`flex flex-col gap-[2vh] w-full max-w-sm mx-auto justify-center items-center ${!isBottomHalf ? "mt-[8vh]" : ""} ${questionIndex === 6 ? "mt-10" : ""} ${questionIndex === 8 ? "mt-20" : ""}`}
 				>
 					{question.choices.map((q, i) => (
 						<button
