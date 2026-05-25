@@ -17,7 +17,7 @@ const ResultPage: FC = () => {
 	const result = getResult(resultIndex);
 
 	return (
-		<div className="h-dvh w-screen flex flex-col justify-center items-center">
+		<div className="min-h-dvh min-h-screen w-screen flex flex-col justify-center items-center overflow-hidden" style={{ height: "100dvh" }}>
 			<img
 				src={resultImages[resultIndex - 1]}
 				alt={result.title}

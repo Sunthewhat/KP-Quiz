@@ -87,7 +87,8 @@ const Homepage: FC = () => {
 
 	return (
 		<div
-			className="relative h-dvh w-screen flex flex-col justify-center items-center cursor-pointer"
+			className="relative min-h-dvh min-h-screen w-screen flex flex-col justify-center items-center cursor-pointer overflow-hidden"
+			style={{ height: "100dvh" }}
 			onClick={handleClick}
 		>
 			<img

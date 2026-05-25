@@ -89,11 +89,12 @@ const QuestionPage: FC = () => {
 	];
 
 	return (
-		<div className="relative h-dvh w-screen flex flex-col">
+		<div className="relative min-h-dvh min-h-screen w-screen flex flex-col overflow-hidden" style={{ height: "100dvh" }}>
 			<img
 				src={backgrounds[questionIndex - 1]}
 				alt=""
 				className="absolute inset-0 h-full w-full object-fill"
+				style={{ minHeight: "100%", minWidth: "100%" }}
 			/>
 			<div
 				className={`relative z-10 flex flex-col items-center gap-10 px-4 py-25 ${isBottomHalf ? "mt-auto" : ""}`}
