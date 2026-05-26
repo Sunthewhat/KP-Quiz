@@ -98,21 +98,22 @@ const Homepage: FC = () => {
 			/>
 			<img src={clouds} alt="" className="absolute inset-0 h-11/12 w-full object-fill animate-float" />
 			<p
-				className={`relative w-11/12 z-10 text-center text-black text-[20px] font-anuphan font-[580] px-4 transition-all duration-700 ${!ready || fading ? "opacity-0" : "opacity-100"}`}
-				style={{ transform: showStartButton ? "translateY(-10vh)" : undefined }}
+				className={`relative w-11/12 z-10 text-center text-black text-[20px] font-anuphan font-[580] px-4 transition-opacity duration-700 ${!ready || fading ? "opacity-0" : "opacity-100"}`}
+				style={{ transform: "translateY(-10vh)" }}
 			>
 				{pages[page]}
 			</p>
 			{page < pages.length - 1 ? (
 				<p
 					className={`relative z-10 text-center text-black text-sm font-anuphan mt-8 transition-opacity duration-700 ${!showButton ? "opacity-0" : "opacity-100"}`}
+					style={{ transform: "translateY(-10vh)" }}
 				>
 					[ กดเพื่อไปต่อ ]
 				</p>
 			) : (
 				<button
-					className={`relative z-10 mt-8 bg-red-500 text-white font-anuphan font-[400] text-lg px-8 py-3 rounded-xs transition-all duration-700 ${showStartButton && !truckLeaving ? "opacity-100" : "opacity-0 pointer-events-none"}`}
-					style={{ transform: showStartButton ? "translateY(-10vh)" : undefined }}
+					className={`relative z-10 mt-8 bg-red-500 text-white font-anuphan font-[400] text-lg px-8 py-3 rounded-xs transition-opacity duration-700 ${showStartButton && !truckLeaving ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+					style={{ transform: "translateY(-10vh)" }}
 					onClick={() => {
 						setTruckLeaving(true);
 						setTimeout(() => navigate("/question?q=1"), 2000);

@@ -228,9 +228,7 @@ const calcResult = () => {
 			}
 		});
 	}
-	const res = resCount
-		.entries()
-		.toArray()
+	const res = Array.from(resCount.entries())
 		.sort((a, b) => b[1] - a[1])[0]![0];
 
 	return res;
