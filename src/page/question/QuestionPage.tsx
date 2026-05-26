@@ -175,7 +175,7 @@ const QuestionPage: FC = () => {
 							onClick={() => handleNextQuestion(i)}
 						>
 							<div
-								className="w-14 shrink-0 flex items-center justify-center font-2005 font-medium leading-none overflow-hidden"
+								className="aspect-square self-stretch shrink-0 flex items-center justify-center font-2005 font-medium leading-none overflow-hidden"
 								style={{
 									fontSize: "clamp(2.5rem, 6vh, 4rem)",
 									backgroundColor: getChoiceHeaderColor(questionIndex),
