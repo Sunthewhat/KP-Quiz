@@ -165,7 +165,8 @@ const QuestionPage: FC = () => {
 					</p>
 				</div>
 				<div
-					className={`flex flex-col gap-[3vh] w-full max-w-sm mx-auto justify-center items-center ${questionIndex === 9 || questionIndex === 12 ? "mt-0" : questionIndex === 8 ? "mt-[8vh]" : questionIndex === 6 ? "mt-10" : !isBottomHalf ? "mt-[4vh]" : "mt-[5vh]"}`}
+					className={`grid gap-[3vh] w-full max-w-sm mx-auto ${questionIndex === 9 || questionIndex === 12 ? "mt-0" : questionIndex === 8 ? "mt-[8vh]" : questionIndex === 6 ? "mt-10" : !isBottomHalf ? "mt-[4vh]" : "mt-[5vh]"}`}
+					style={{ gridTemplateRows: `repeat(${question.choices.length}, 1fr)` }}
 				>
 					{question.choices.map((q, i) => (
 						<button
@@ -188,7 +189,7 @@ const QuestionPage: FC = () => {
 								{["A.", "B.", "C.", "D."][i]}
 							</div>
 							<div
-								className="whitespace-pre-line font-anuphan font-[480] text-center flex items-center"
+								className="whitespace-pre-line font-anuphan font-[480] text-center flex items-center justify-center h-full"
 								style={{
 									fontSize: "clamp(0.75rem, 2vh, 1rem)",
 									padding: `clamp(0.25rem, 1vh, 0.5rem) ${questionIndex === 8 ? "1.5rem" : "0.75rem"}`,
