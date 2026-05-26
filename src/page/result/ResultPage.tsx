@@ -49,7 +49,7 @@ const ResultPage: FC = () => {
 			/>
 			<button
 				onClick={handleShare}
-				className="mt-4 bg-white text-black font-anuphan font-[500] text-lg px-8 py-3 rounded-full shadow-lg"
+				className="mt-4 bg-white text-black font-anuphan font-medium text-lg px-8 py-3 rounded-full shadow-lg"
 			>
 				บันทึกผลลัพธ์
 			</button>

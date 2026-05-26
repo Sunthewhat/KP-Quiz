@@ -96,7 +96,11 @@ const Homepage: FC = () => {
 				alt=""
 				className="absolute inset-0 h-full w-full object-cover object-bottom"
 			/>
-			<img src={clouds} alt="" className="absolute inset-0 h-11/12 w-full object-fill animate-float" />
+			<img
+				src={clouds}
+				alt=""
+				className="absolute inset-0 h-11/12 w-full object-fill animate-float"
+			/>
 			<p
 				className={`relative w-11/12 z-10 text-center text-black text-[20px] font-anuphan font-[580] px-4 transition-opacity duration-700 ${!ready || fading ? "opacity-0" : "opacity-100"}`}
 				style={{ transform: "translateY(-10vh)" }}
@@ -112,7 +116,7 @@ const Homepage: FC = () => {
 				</p>
 			) : (
 				<button
-					className={`relative z-10 mt-8 bg-red-500 text-white font-anuphan font-[400] text-lg px-8 py-3 rounded-xs transition-opacity duration-700 ${showStartButton && !truckLeaving ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+					className={`relative z-10 mt-8 bg-red-500 text-white font-anuphan font-normal text-lg px-8 py-3 rounded-xs transition-opacity duration-700 ${showStartButton && !truckLeaving ? "opacity-100" : "opacity-0 pointer-events-none"}`}
 					style={{ transform: "translateY(-10vh)" }}
 					onClick={() => {
 						setTruckLeaving(true);
