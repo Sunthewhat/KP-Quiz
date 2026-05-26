@@ -191,7 +191,7 @@ const QuestionPage: FC = () => {
 								className="whitespace-pre-line font-anuphan font-[480] text-center flex items-center"
 								style={{
 									fontSize: "clamp(0.75rem, 2vh, 1rem)",
-									padding: `clamp(0.5rem, 1.5vh, 0.75rem) ${questionIndex === 8 ? "1.5rem" : "0.75rem"}`,
+									padding: `clamp(0.25rem, 1vh, 0.5rem) ${questionIndex === 8 ? "1.5rem" : "0.75rem"}`,
 									backgroundColor: getChoiceColor(questionIndex),
 									color: getChoiceTextColor(questionIndex),
 								}}
