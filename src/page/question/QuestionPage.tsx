@@ -170,12 +170,15 @@ const QuestionPage: FC = () => {
 					{question.choices.map((q, i) => (
 						<button
 							key={i}
-							className="flex overflow-hidden text-left"
-							style={{ transform: `rotate(${rotations[questionIndex - 1]![i]}deg)` }}
+							className="grid overflow-hidden text-left"
+							style={{
+								transform: `rotate(${rotations[questionIndex - 1]![i]}deg)`,
+								gridTemplateColumns: "auto 1fr",
+							}}
 							onClick={() => handleNextQuestion(i)}
 						>
 							<div
-								className="aspect-square self-stretch shrink-0 flex items-center justify-center font-2005 font-medium leading-none overflow-hidden"
+								className="aspect-square flex items-center justify-center font-2005 font-medium leading-none overflow-hidden"
 								style={{
 									fontSize: "clamp(2.5rem, 6vh, 4rem)",
 									backgroundColor: getChoiceHeaderColor(questionIndex),
